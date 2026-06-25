@@ -1,16 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int a, b;
+int main()
+{
+    double voltage;
 
-    cout << "Enter first number: ";
-    cin >> a;
+    // Read first voltage
+    cout << "Enter battery voltage: ";
+    cin >> voltage;
 
-    cout << "Enter second number: ";
-    cin >> b;
+    // Continue while voltage is safe
+    while (voltage >= 12)
+    {
+        cout << "Voltage = " << voltage << " V" << endl;
 
-    cout << ((a > b) ? a : b);
+        // Read next voltage
+        cout << "Enter battery voltage: ";
+        cin >> voltage;
+    }
+
+    // Warning message
+    cout << "Battery voltage low! Recharge required." << endl;
 
     return 0;
 }
